@@ -1,0 +1,17 @@
+[user]
+	name = Henrik Carlioth
+	email = hca@qlik.com
+[alias]
+	co = checkout
+	cob = checkout -b
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+ 	bclean = "!f() { git fetch -p && for branch in `git branch -vv | gawk '{print $1,$4}' | grep 'gone]' | gawk '{print $1}'`; do git branch -D $branch; done }; f"
+ 	bdone = "!f() { git checkout ${1-master} && git up && git bclean; }; f"
+ 	save = !git add -A && git commit -m 'SAVEPOINT'
+ 	undo = reset HEAD~1 --mixed
+ 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[pull]
+	ff = only
+[core]
+	ignorecase = false
+	autocrlf = true
