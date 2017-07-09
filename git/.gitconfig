@@ -5,7 +5,7 @@
 	co = checkout
 	cob = checkout -b
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
- 	bclean = "!f() { git fetch -p && for branch in `git branch -vv | gawk '{print $1,$4}' | grep 'gone]' | gawk '{print $1}'`; do git branch -D $branch; done }; f"
+	bclean = !git checkout ${1-master} && git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
  	bdone = "!f() { git checkout ${1-master} && git up && git bclean; }; f"
  	save = !git add -A && git commit -m 'SAVEPOINT'
  	undo = reset HEAD~1 --mixed
@@ -14,4 +14,4 @@
 	ff = only
 [core]
 	ignorecase = false
-	autocrlf = true
+	autocrlf = input
