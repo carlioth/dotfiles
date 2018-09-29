@@ -1,3 +1,9 @@
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/hca/.gitignore
+	ignorecase = false
+	autocrlf = input
 [user]
 	name = Henrik Carlioth
 	email = hca@qlik.com
@@ -7,11 +13,11 @@
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	bclean = !git checkout ${1-master} && git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
  	bdone = "!f() { git checkout ${1-master} && git up && git bclean; }; f"
+ 	open = !open `git config remote.origin.url`
  	save = !git add -A && git commit -m 'SAVEPOINT'
  	undo = reset HEAD~1 --mixed
  	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 [pull]
 	ff = only
-[core]
-	ignorecase = false
-	autocrlf = input
+[push]
+	default = current

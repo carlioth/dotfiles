@@ -17,4 +17,22 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 #Docker
 alias dps="docker ps"
 alias dpsa="docker ps -a"
-alias dclean="docker rm -f -v $(docker ps -q -a) && docker rmi $(docker images | grep "^<none>" | awk "{print $3}");
+dexec() { docker exec -i -t $1 sh; }
+
+alias dclean="docker system prune --all --force --volumes"
+alias dstop="docker ps -q | xargs docker kill && docker ps -aq | xargs docker rm -f"
+
+#Kubernetes aliases
+alias k="kubectl"
+alias kgetc="kubectl config get-contexts"
+alias ksetprivate="gcloud config configurations activate default"
+alias ksetwork="gcloud config configurations activate work"
+
+#Docker machine
+alias dm='docker-machine'
+alias rmm="docker-machine rm -y -f $(docker-machine ls -q)"
+
+# link to folders
+
+alias fgo="cd /Users/hca/go/src/github.com/qlik-oss"
+alias fgit="cd /Users/hca/git"
