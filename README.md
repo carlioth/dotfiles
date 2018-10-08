@@ -27,3 +27,5 @@ logga in i appstore innan köra mas kommandon.
 clona repo, logga in med https mot github. måste skapa person access token pga. 2fa. 
 
 Show volume in meny bar
+
+Göm date and time in menu bar
