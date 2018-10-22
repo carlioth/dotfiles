@@ -6,6 +6,7 @@
 brew cask install alfred
 brew cask install appcleaner
 brew cask install bettertouchtool
+brew cask install cyberduck
 brew cask install evernote
 brew cask install dropbox
 brew cask install docker
