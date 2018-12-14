@@ -13,3 +13,5 @@ fi
 
 # Amphetamine
 mas install 937984704
+# Battery Time & Health
+mas install 976964316
