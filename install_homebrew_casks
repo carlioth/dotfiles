@@ -2,7 +2,7 @@
 
 # DESCRIPTION
 # Installs Homebrew Casks.
-
+brew cask install adoptopenjdk8
 brew cask install alfred
 brew cask install appcleaner
 brew cask install bettertouchtool
@@ -14,6 +14,7 @@ brew cask install google-chrome
 brew cask install google-cloud-sdk
 brew cask install iterm2
 brew cask install itsycal
+brew cask install little-snitch
 brew cask install microsoft-office
 brew cask install slack
 brew cask install spectacle
