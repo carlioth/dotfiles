@@ -3,7 +3,7 @@ alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO && killall
 alias relaunch="killall Finder"
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipe="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -21,18 +21,3 @@ dexec() { docker exec -i -t $1 sh; }
 
 alias dclean="docker system prune --all --force --volumes"
 alias dstop="docker ps -q | xargs docker kill && docker ps -aq | xargs docker rm -f"
-
-#Kubernetes aliases
-alias k="kubectl"
-alias kgetc="kubectl config get-contexts"
-alias ksetprivate="gcloud config configurations activate default"
-alias ksetwork="gcloud config configurations activate work"
-
-#Docker machine
-alias dm='docker-machine'
-alias rmm="docker-machine rm -y -f $(docker-machine ls -q)"
-
-# link to folders
-
-alias fgo="cd /Users/hca/go/src/github.com/qlik-oss"
-alias fgit="cd /Users/hca/git"
