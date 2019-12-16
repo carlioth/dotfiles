@@ -2,6 +2,7 @@
 
 # DESCRIPTION
 # Installs Homebrew Casks.
+brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
 brew cask install alfred
 brew cask install appcleaner
