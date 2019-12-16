@@ -11,8 +11,7 @@ if ! command -v brew > /dev/null; then
   printf "export PATH=\"/usr/local/bin:$PATH\"\n" >> $HOME/.bash_profile
 fi
 
-# Mac App Store CLI
-brew install mas
+brew install git
 brew install jq
 
 cd ~ && mkdir go
