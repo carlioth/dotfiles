@@ -12,8 +12,6 @@
 
 Tabort I keyboard shortcuts Alfred’s cmd space. 
 
-Git installerades genom ladda ner från sida. 
-
 Lägg in alias file. 
 
 Stäng av mirroring i display settings. 
