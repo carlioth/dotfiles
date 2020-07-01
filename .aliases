@@ -3,7 +3,7 @@ alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO && killall
 alias relaunch="killall Finder"
 
 # IP addresses
-alias ipe="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -21,3 +21,22 @@ dexec() { docker exec -i -t $1 sh; }
 
 alias dclean="docker system prune --all --force --volumes"
 alias dstop="docker ps -q | xargs docker kill && docker ps -aq | xargs docker rm -f"
+
+#Kubernetes
+kdebug() { kubectl run -i --rm --tty debug --image=alpine --restart=Never -- sh; }
+
+
+#AWS
+activate-aws ()
+{
+    export AWS_PROFILE=$1;
+    aws --profile ${AWS_PROFILE} sts get-caller-identity >&/dev/null;
+    if [ ! $? -eq 0 ]; then
+        echo "Current IAM credentials for AWS profile '${AWS_PROFILE}' have expired, retrieving new credentials...";
+        if [[ ! -n $(grep "${AWS_PROFILE}" ~/.okta-aws) ]]; then
+            echo -e "\n[${AWS_PROFILE}]\nbase-url=qlik.okta.com\nusername=$(id -un)\nrole=Okta_admin" >> ~/.okta-aws;
+        fi;
+        okta-awscli --profile ${AWS_PROFILE} --okta-profile ${AWS_PROFILE} --force;
+    fi;
+    echo "Activated AWS profile '${AWS_PROFILE}'..."
+}

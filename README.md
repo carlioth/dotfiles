@@ -1,5 +1,8 @@
 # MyDotfiles
 
+FIXA
+SYMLINK
+
 
 ## Manual steps
 

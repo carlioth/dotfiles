@@ -10,7 +10,7 @@
 [alias]
 	co = checkout
 	cob = checkout -b
-	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	up = !git pull --rebase --prune --autostash $@ && git submodule update --init --recursive
 	bclean = !git checkout ${1-master} && git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
  	bdone = "!f() { git checkout ${1-master} && git up && git bclean; }; f"
  	open = !open `git config remote.origin.url`

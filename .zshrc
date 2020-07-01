@@ -1,13 +1,12 @@
-export ZSH="/Users/hca/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/go/bin"
 
 export EDITOR='subl -w'
 source $HOME/.aliases
-source $HOME/.workenv
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-plugins=(git docker npm zsh-autosuggestions zsh-syntax-highlighting kubectl)
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 eval "$(direnv hook zsh)"
 
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -26,7 +25,4 @@ POWERLEVEL9K_KUBECONTEXT_FOREGROUND="254"
 
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
