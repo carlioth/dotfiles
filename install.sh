@@ -4,7 +4,7 @@
 # Install apps using Homebrew
 
 if ! command -v brew > /dev/null; then
-  ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 brew update

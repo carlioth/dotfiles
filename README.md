@@ -4,14 +4,11 @@
 
 ### Automate when time
 
--Docken till vänster, justera storlek. autohide on.
 - Ändra batteri till procent
-- scroll direction
 - Lägg till home dir till favourites I finder
 
 Tabort I keyboard shortcuts Alfred’s cmd space. 
 
-Lägg in alias file. 
 
 Stäng av mirroring i display settings. 
 

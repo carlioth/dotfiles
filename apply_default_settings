@@ -3,11 +3,8 @@
 # DESCRIPTION
 # Setup OSX with defaults
 
-# STATUS
-# Reviewing commands
-
-# EXECUTION
-
+# Unnatural scroll direction
+defaults write -g com.apple.swipescrolldirection -bool FALSE
 
 printf "System - Disable boot sound effects\n"
 sudo nvram SystemAudioVolume=" "
