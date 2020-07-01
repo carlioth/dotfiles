@@ -1,9 +1,5 @@
 # MyDotfiles
 
-FIXA
-SYMLINK
-
-
 ## Manual steps
 
 ### Automate when time

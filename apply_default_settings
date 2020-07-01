@@ -7,6 +7,8 @@
 # Reviewing commands
 
 # EXECUTION
+
+
 printf "System - Disable boot sound effects\n"
 sudo nvram SystemAudioVolume=" "
 
@@ -71,6 +73,9 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
+# Use AirDrop over every interface. srsly this should be a default.
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+
 printf "Trackpad - Enable tap to click for current user and the login screen\n"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -131,8 +136,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 printf "Finder - Display full POSIX path as window title\n"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-printf "Finder - Use list view in all Finder windows\n"
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Always open everything in Finder's list view. This is important.
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 printf "Finder - Allow quitting via COMMAND+Q -- Doing so will also hide desktop icons\n"
 defaults write com.apple.finder QuitMenuItem -bool true
