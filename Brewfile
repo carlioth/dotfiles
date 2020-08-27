@@ -7,6 +7,7 @@ tap "AdoptOpenJDK/openjdk"
 
 # packages
 brew "git"
+brew "golang"
 brew "jq"
 brew "zsh"
 brew "mas"
