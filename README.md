@@ -1,6 +1,13 @@
 # MyDotfiles
 
 ## Manual steps
+Run the install.sh file. `brew bundle` will then install all the files in `Brewfile`. 
+
+Install in Appstore: 
+"Microsoft To Do", id: 1274495053
+Pomodoro
+
+Move aliases, gitconfig & gitignore to home.
 
 ### Automate when time
 

@@ -11,8 +11,6 @@ brew update
 brew upgrade
 brew bundle
 
-brew install --cask iterm2
-
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 brew install romkatv/powerlevel10k/powerlevel10k

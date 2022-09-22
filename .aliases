@@ -28,6 +28,13 @@ kdebug() { kubectl run -i --rm --tty debug --image=alpine --restart=Never -- sh;
 #Yq
 alias yq="yq eval -P"
 
+#exa
+if command -v exa >/dev/null; then
+    alias ls='exa --header --long --git --icons'
+else
+    alias ls='/bin/ls $LS_OPTIONS'
+fi
+
 #AWS
 activate-aws ()
 {

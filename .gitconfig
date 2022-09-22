@@ -1,12 +1,12 @@
 [credential]
 	helper = osxkeychain
 [core]
-	excludesfile = /Users/hca/.gitignore
+	excludesfile = /Users/henrikcarlioth/.gitignore
 	ignorecase = false
 	autocrlf = input
 [user]
 	name = Henrik Carlioth
-	email = hca@qlik.com
+	email = henrik.carlioth@matchi.se
 [alias]
 	co = checkout
 	cob = checkout -b
