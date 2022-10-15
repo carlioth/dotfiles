@@ -16,6 +16,7 @@ brew "kubernetes-cli"
 brew "nmap"
 brew "pre-commit"
 brew "pyenv"
+brew "pyenv-virtualenv"
 brew "rich"
 brew "terraform"
 
