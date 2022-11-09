@@ -18,6 +18,7 @@ brew "pre-commit"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "rich"
+brew "yg"
 brew "terraform"
 
 # Casks
