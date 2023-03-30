@@ -7,6 +7,7 @@ alias ip="curl ifconfig.co/json"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
+alias reload="exec zsh"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
@@ -36,16 +37,25 @@ else
 fi
 
 #AWS
+alias aws-list="aws configure list-profiles"
+
 activate-aws ()
 {
     export AWS_PROFILE=$1;
     aws --profile ${AWS_PROFILE} sts get-caller-identity >&/dev/null;
     if [ ! $? -eq 0 ]; then
         echo "Current IAM credentials for AWS profile '${AWS_PROFILE}' have expired, retrieving new credentials...";
-        if [[ ! -n $(grep "${AWS_PROFILE}" ~/.okta-aws) ]]; then
-            echo -e "\n[${AWS_PROFILE}]\nbase-url = qlik.okta.com\nusername = $(id -un)" >> ~/.okta-aws;
-        fi;
-        okta-awscli --profile ${AWS_PROFILE} --okta-profile ${AWS_PROFILE} --force;
+        aws sso login
     fi;
     echo "Activated AWS profile '${AWS_PROFILE}'..."
+}
+
+set-prod-envs ()
+{
+    ENVIRONMENT=prod source ~/git/tf-data-platform/webapp-test/secret-variables.sh
+}
+
+set-test-envs ()
+{
+    source ~/git/tf-data-platform/webapp-test/secret-variables.sh
 }
